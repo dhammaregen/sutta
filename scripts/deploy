@@ -1,0 +1,18 @@
+#!/bin/bash
+
+git status 2> /dev/null | grep "nothing to commit"; RC=$?
+if [ "$RC" == "0" ]; then
+  echo -e "DEPLOY\t: git is clean (OK)"
+else
+  echo -e "DEPLOY\t: git is NOT clean (CANCELED)"
+  git status
+  exit -1
+fi
+git checkout deploy
+git merge main -m "deploy: merge main" &&\
+npm run generate &&\
+npm run deploy:branch &&\
+git push &&\
+git checkout main &&\
+echo -e "DEPLOY\t: done"
+
