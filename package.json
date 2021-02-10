@@ -1,6 +1,6 @@
 {
   "name": "de-sutta",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
   "scripts": {
     "build": "scripts/build",
@@ -26,7 +26,7 @@
   },
   "devDependencies": {
     "@mdi/js": "^5.8.55",
-    "@nuxtjs/vuetify": "1.11.2",
+    "@nuxtjs/vuetify": "^1.11.2",
     "fibers": "^5.0.0",
     "memo-again": "^0.3.12",
     "mocha": "^7.1.1",
