@@ -5,6 +5,7 @@ mkdir -p src
 
 echo -e "BUILD\t: copying files from scv-static"
 cp -rv node_modules/@sc-voice/scv-static/components/* components
+cp -rv node_modules/@sc-voice/scv-static/static/* static
 cp -rv node_modules/@sc-voice/scv-static/plugins/* plugins
 cp -rv node_modules/@sc-voice/scv-static/pages/* pages
 cp -rv node_modules/@sc-voice/scv-static/src/* src
