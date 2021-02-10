@@ -3,17 +3,43 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
+    "build": "scripts/build",
+    "build:examples": "scripts/js/build.js",
+    "build:nuxt": "nuxt build",
+    "test": "npm run test:verbose",
+    "test:action": "scripts/test-action",
+    "test:test": "mocha -w --watch-ignore node_modules,.git,local -R min --inline-diffs -g TEST './@(src|test)/**/*.js'",
+    "test:verbose": "mocha --inline-diffs",
+    "test:watch": "mocha -w --inline-diffs",
     "dev": "nuxt",
-    "build": "nuxt build",
     "start": "nuxt start",
-    "generate": "nuxt generate"
+    "generate": "nuxt generate",
+    "deploy": "scripts/deploy",
+    "deploy:branch": "push-dir --dir=dist --branch=gh-pages --cleanup"
   },
   "dependencies": {
     "@sc-voice/scv-static": "^0.2.3",
-    "core-js": "^3.8.3",
-    "nuxt": "^2.14.12"
+    "core-js": "^3.6.5",
+    "nuxt": "^2.14.6",
+    "vue-cookie": "^1.1.4",
+    "vue-details": "^1.0.9"
   },
   "devDependencies": {
-    "@nuxtjs/vuetify": "^1.11.3"
-  }
+    "@mdi/js": "^5.8.55",
+    "@nuxtjs/vuetify": "1.11.2",
+    "fibers": "^5.0.0",
+    "memo-again": "^0.3.12",
+    "mocha": "^7.1.1",
+    "push-dir": "^0.4.1",
+    "sass-loader": "^8.0",
+    "scv-bilara": "^1.7.0",
+    "should": "^11.2.0",
+    "vue-material-design-icons": "^4.11.0"
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "_end_": "_end_"
 }

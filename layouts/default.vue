@@ -16,7 +16,8 @@
           exact
         >
           <v-list-item-action>
-            <v-icon>{{ item.icon }}</v-icon>
+            <home-icon v-if="item.icon==='home-icon'" />
+            <monitor-icon v-if="item.icon==='monitor-icon'" />
           </v-list-item-action>
           <v-list-item-content>
             <v-list-item-title v-text="item.title" />
@@ -29,89 +30,70 @@
       fixed
       app
     >
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
-      <v-btn
-        icon
-        @click.stop="miniVariant = !miniVariant"
-      >
-        <v-icon>mdi-{{ `chevron-${miniVariant ? 'right' : 'left'}` }}</v-icon>
-      </v-btn>
-      <v-btn
-        icon
-        @click.stop="clipped = !clipped"
-      >
-        <v-icon>mdi-application</v-icon>
-      </v-btn>
-      <v-btn
-        icon
-        @click.stop="fixed = !fixed"
-      >
-        <v-icon>mdi-minus</v-icon>
-      </v-btn>
-      <v-toolbar-title v-text="title" />
+      <Logo/>
+      <v-toolbar-title >
+        Dhammaregen/sutta{{$route.path}}
+      </v-toolbar-title>
       <v-spacer />
-      <v-btn
-        icon
-        @click.stop="rightDrawer = !rightDrawer"
-      >
-        <v-icon>mdi-menu</v-icon>
-      </v-btn>
+      <menu-icon  class="scv-app-icon"
+        @click="menuClicked"
+        />
     </v-app-bar>
     <v-main>
       <v-container>
         <nuxt />
       </v-container>
     </v-main>
-    <v-navigation-drawer
-      v-model="rightDrawer"
-      :right="right"
-      temporary
-      fixed
-    >
-      <v-list>
-        <v-list-item @click.native="right = !right">
-          <v-list-item-action>
-            <v-icon light>
-              mdi-repeat
-            </v-icon>
-          </v-list-item-action>
-          <v-list-item-title>Switch drawer (click me)</v-list-item-title>
-        </v-list-item>
-      </v-list>
-    </v-navigation-drawer>
     <v-footer
       :absolute="!fixed"
       app
     >
-      <span>&copy; {{ new Date().getFullYear() }}</span>
+      <span>&copy; {{ new Date().getFullYear() }} v{{version}}</span>
     </v-footer>
   </v-app>
 </template>
 
 <script>
+import Vue from 'vue';
+import Logo from '~/components/logo.vue';
+const { version } = require('~/package.json');
+import HomeIcon from 'vue-material-design-icons/Home.vue';
+import MenuIcon from 'vue-material-design-icons/Menu.vue';
+import MonitorIcon from 'vue-material-design-icons/Monitor.vue';
+
 export default {
+  components: {
+    Logo,
+    HomeIcon,
+    MenuIcon,
+    MonitorIcon,
+  },
   data () {
     return {
       clipped: false,
       drawer: false,
       fixed: false,
       items: [
-        {
-          icon: 'mdi-apps',
-          title: 'Welcome',
-          to: '/'
-        },
-        {
-          icon: 'mdi-chart-bubble',
-          title: 'Inspire',
-          to: '/inspire'
-        }
+        { icon: 'home-icon', title: 'Home', to: '/' },
+        { icon: 'monitor-icon', title: 'Desktop', to: '/desktop' },
       ],
       miniVariant: false,
       right: true,
       rightDrawer: false,
-      title: 'Vuetify.js'
+      title: 'scv-static'
     }
-  }
+  },
+  methods: {
+    menuClicked() {
+      Vue.set(this, "drawer", true);
+    },
+  },
+  computed: {
+    version() {
+      return version;
+    },
+  },
 }
 </script>
+<style>
+</style>
