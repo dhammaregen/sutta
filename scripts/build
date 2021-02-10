@@ -1,0 +1,6 @@
+#!/bin/bash
+echo -e "BUILD\t: BEGIN `date`"
+
+cp node_modules/@sc-voice/scv-static/components/*.vue components
+
+echo -e "BUILD\t: END `date`"
