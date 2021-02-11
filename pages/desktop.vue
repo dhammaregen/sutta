@@ -16,14 +16,16 @@
 
 <script>
 import Vue from 'vue';
-import ScvSearchField from '~/components/scv-search-field.vue';
-import ScvResults from '~/components/scv-results.vue';
-import ScvSutta from '~/components/scv-sutta.vue';
-import ScvSettings from '~/components/scv-settings.vue';
-const JS = {
-  BilaraWeb: require('../src/bilara-web'),
-  Tipitaka: require('../src/tipitaka'),
-}
+import { 
+  ScvVue,
+  ScvSrc,
+} from "@sc-voice/scv-static";
+const {
+  ScvSearchField,
+  ScvResults,
+  ScvSutta,
+  ScvSettings,
+} = ScvVue;
 
 export default {
   components: {
@@ -50,7 +52,7 @@ export default {
   },
   computed: {
     js() { 
-      return JS;
+      return ScvSrc;
     },
     langItems() {
       return [

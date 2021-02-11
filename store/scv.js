@@ -1,6 +1,9 @@
-import BilaraWeb from '../src/bilara-web';
-const { examples } = require('../src/examples.js');
-import Settings from '../src/settings';
+import { ScvSrc } from '@sc-voice/scv-static/';
+const {
+    BilaraWeb,
+    Examples,
+    Settings,
+} = ScvSrc;
 
 var bilaraWeb;
 
@@ -20,7 +23,7 @@ export const state = () => ({
     searchResults: {},
     settings: Object.assign({}, new Settings()),
     sutta: DEFAULT.sutta,
-    examples,
+    examples: Examples.examples,
     voices: [],
 })
 

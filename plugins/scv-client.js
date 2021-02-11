@@ -1,6 +1,9 @@
 import Vue from "vue"
 import VueCookie from "vue-cookie"
-const { Settings, } = require('../index');
+const { ScvSrc } = require('@sc-voice/scv-static');
+const {
+    Settings,
+} = ScvSrc;
 
 const COOKIE_NAME = 'scv-settings';
 const COOKIE_SETTINGS = {
