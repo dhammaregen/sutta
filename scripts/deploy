@@ -1,5 +1,6 @@
 #!/bin/bash
 
+git checkout package-lock.json
 git status 2> /dev/null | grep "nothing to commit"; RC=$?
 if [ "$RC" == "0" ]; then
   echo -e "DEPLOY\t: git is clean (OK)"
@@ -8,11 +9,11 @@ else
   git status
   exit -1
 fi
-git checkout deploy
-git merge main -m "deploy: merge main" &&\
+
+export BABEL_ENV=deploy
 npm run generate &&\
 npm run deploy:branch &&\
 git push &&\
-git checkout main &&\
+
 echo -e "DEPLOY\t: done"
 
