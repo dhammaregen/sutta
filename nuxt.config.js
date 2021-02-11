@@ -8,9 +8,9 @@ let routerBase = BABEL_ENV === 'deploy'
     ? `/${appName}/`
     : '/';
 babelCompact = BABEL_ENV === 'deploy' ? true : false;
-console.log(`nuxt.config.js`, JSON.stringify({routerBase, BABEL_ENV, babelCompact}));
 
 CONFIG.router.base = routerBase;
+CONFIG.vuetify.theme.dark = false;
 Object.assign(CONFIG.head, {
     titleTemplate: '%s - static',
     title: 'Dhammaregen/sutta',
@@ -18,5 +18,7 @@ Object.assign(CONFIG.head, {
       lang: 'de'
     },
 });
+
+//console.log(`Dhammaregen nuxt.config.js`, JSON.stringify(CONFIG, null, 2));
 
 export default CONFIG;

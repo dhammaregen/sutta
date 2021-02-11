@@ -1,44 +1,5 @@
 <template>
-  <v-app dark>
-    <v-navigation-drawer
-      v-model="drawer"
-      :mini-variant="miniVariant"
-      :clipped="clipped"
-      fixed
-      app
-    >
-      <v-list>
-        <v-list-item
-          v-for="(item, i) in items"
-          :key="i"
-          :to="item.to"
-          router
-          exact
-        >
-          <v-list-item-action>
-            <home-icon v-if="item.icon==='home-icon'" />
-            <monitor-icon v-if="item.icon==='monitor-icon'" />
-          </v-list-item-action>
-          <v-list-item-content>
-            <v-list-item-title v-text="item.title" />
-          </v-list-item-content>
-        </v-list-item>
-      </v-list>
-    </v-navigation-drawer>
-    <v-app-bar
-      :clipped-left="clipped"
-      fixed
-      app
-    >
-      <Logo/>
-      <v-toolbar-title >
-        Dhammaregen/sutta{{$route.path}}
-      </v-toolbar-title>
-      <v-spacer />
-      <menu-icon  class="scv-app-icon"
-        @click="menuClicked"
-        />
-    </v-app-bar>
+  <v-app light>
     <v-main>
       <v-container>
         <nuxt />
