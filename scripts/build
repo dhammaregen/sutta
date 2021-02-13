@@ -8,7 +8,7 @@ if [ "$RC" == "0" ]; then
   echo -e "BUILD\t:nothing to commit"
 else
   SCV_VER=`json version < node_modules/@sc-voice/scv-static/package.json`
-  MSG="build upgraded scv-static v$SCV_VER"
+  MSG="build with scv-static v$SCV_VER"
   echo -e "BUILD\t: $MSG"
   git commit -am "$MSG"
   npm version patch
