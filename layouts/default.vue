@@ -94,10 +94,11 @@ export default {
 }
 @media(width < 600px) {
   .banner {
-    height: 104px;
+    height: 80px;
     width: 100%;
     border-radius: 0px;
     margin-top: 0px;
+    padding: 4px 0px 30px 20px;
   }
 }
 .container {
@@ -126,6 +127,11 @@ export default {
   height: 1em;
   margin-top: 0.8em;
   margin-left: 0.1em;
+}
+@media(width < 600px) {
+  .banner-sutta-link {
+    margin-top: 0.3em;
+  }
 }
 a {
   text-decoration: none;
