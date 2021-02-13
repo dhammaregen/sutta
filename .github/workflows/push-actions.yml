@@ -8,7 +8,6 @@ jobs:
         with:
           fetch-depth: 0
       - uses: actions/setup-node@v1
-      - run: scripts/install
       - run: git config user.name github-actions
       - run: git config user.email github-actions@github.com
       - run: npm run build
