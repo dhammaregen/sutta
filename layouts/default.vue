@@ -6,7 +6,7 @@
           <a href="https://voice.suttacentral.net/"
             aria-label="zur voice-webseite"
             target="_blank"
-            class='banner-sc-link'>Suttacentral Voice</a>
+            class='banner-sc-link'>SuttaCentral Voice</a>
         </div>
         <div>
           <a href="https://dhammaregen.github.io/dhammaregen"
@@ -17,7 +17,7 @@
         <div class="banner-sutta-link">
           <a href="https://dhammaregen.github.io/sutta"
             aria-label="suttas"
-            >suttas</a>
+            >Suttas</a>
         </div>
       </div>
       <v-container>
@@ -77,7 +77,8 @@ export default {
 </script>
 <style>
 .banner {
-  height: 104px;
+  height: 120px;
+  border-top-right-radius: 4px;
   border-bottom-right-radius: 4px;
   background-color: #171717;
   background-image: url('~assets/img/waterfall.png');
@@ -87,19 +88,23 @@ export default {
   width: 350px;
   font-size: 24px;
   font-family: Helvetica, Sans Serif;
+  margin-top: 40px;
   line-height: 1em;
   padding: 18px 0px 30px 20px;
 }
 @media(width < 600px) {
   .banner {
+    height: 104px;
     width: 100%;
     border-radius: 0px;
+    margin-top: 0px;
   }
 }
 .container {
   padding: 0px;
 }
 .banner-sc-link {
+  font-family: Helvetica, sans-serif;
   font-size: 12.7px;
   font-style: italic;
   text-decoration: none;
@@ -115,11 +120,12 @@ export default {
   color: #FDFDFB;
 }
 .banner-sutta-link {
-  font-size: 15px;
+  font-size: 13px;
   font-weight: 400;
   line-height: 1em;
   height: 1em;
-  margin-left: 0.2em;
+  margin-top: 0.8em;
+  margin-left: 0.1em;
 }
 a {
   text-decoration: none;

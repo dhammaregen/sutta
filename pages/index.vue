@@ -2,6 +2,9 @@
   <v-sheet light class="desktop" >
     <div class="desktop-nav">
       <div class="text-h6">Dhammaregen.github.io/sutta</div>
+      <v-btn icon>
+        <v-icon>mdi-home</v-icon>
+      </v-btn>
       <scv-settings dark :js="js"/>
     </div>
     <div class="desktop-search">

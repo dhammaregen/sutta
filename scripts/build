@@ -1,5 +1,22 @@
 #!/bin/bash
 echo -e "BUILD\t: BEGIN `date`"
+DIR=`basename $0`
 
+npm install --save @sc-voice/scv-static
+git status | grep 'nothing to commit' > /dev/null; RC=$?
+if [ "$RC" == "0" ]; then
+  echo -e "BUILD\t:nothing to commit"
+else
+  SCV_VER=`json version < node_modules/@sc-voice/scv-static/package.json`
+  MSG="build upgraded scv-static v$SCV_VER"
+  echo -e "BUILD\t: $MSG"
+  git commit -am "$MSG"
+  npm version patch
+  VERSION=`json version < package.json`
+  git reset --soft HEAD~1
+  git commit --amend -m "v$VERSION build"
+  git push
+  $DIR/deploy
+fi
 
 echo -e "BUILD\t: END `date`"
