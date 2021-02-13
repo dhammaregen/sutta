@@ -1,10 +1,5 @@
 #!/bin/bash
 echo -e "BUILD\t: BEGIN `date`"
 
-mkdir -p src
-
-echo -e "BUILD\t: copying files from scv-static"
-cp -rv node_modules/@sc-voice/scv-static/static/* static
-cp node_modules/@sc-voice/scripts/deploy .
 
 echo -e "BUILD\t: END `date`"

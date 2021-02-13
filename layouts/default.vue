@@ -1,10 +1,29 @@
 <template>
   <v-app light>
-    <v-main>
+    <div-main class="site-main">
+      <div class="banner">
+        <div>
+          <a href="https://voice.suttacentral.net/"
+            aria-label="zur voice-webseite"
+            target="_blank"
+            class='banner-sc-link'>Suttacentral Voice</a>
+        </div>
+        <div>
+          <a href="https://dhammaregen.github.io/dhammaregen"
+            class='banner-title'
+            aria-label="dhammaregen-homepage"
+            >Dhammaregen</a>
+        </div>
+        <div class="banner-sutta-link">
+          <a href="https://dhammaregen.github.io/sutta"
+            aria-label="suttas"
+            >suttas</a>
+        </div>
+      </div>
       <v-container>
         <nuxt />
       </v-container>
-    </v-main>
+    </div-main>
     <v-footer
       :absolute="!fixed"
       app
@@ -57,4 +76,70 @@ export default {
 }
 </script>
 <style>
+.banner {
+  height: 104px;
+  border-bottom-right-radius: 4px;
+  background-color: #171717;
+  background-image: url('~assets/img/waterfall.png');
+  background-repeat: no-repeat;
+  background-position: right -20px bottom 0px;
+  background-size: 100px;
+  width: 350px;
+  font-size: 24px;
+  font-family: Helvetica, Sans Serif;
+  line-height: 1em;
+  padding: 18px 0px 30px 20px;
+}
+@media(width < 600px) {
+  .banner {
+    width: 100%;
+    border-radius: 0px;
+  }
+}
+.container {
+  padding: 0px;
+}
+.banner-sc-link {
+  font-size: 12.7px;
+  font-style: italic;
+  text-decoration: none;
+  color: #ce8400;
+  line-height: 1em;
+  margin-top: 0.2em;
+}
+.v-application a.banner-title {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1em;
+  height: 1em;
+  color: #FDFDFB;
+}
+.banner-sutta-link {
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1em;
+  height: 1em;
+  margin-left: 0.2em;
+}
+a {
+  text-decoration: none;
+}
+a:focus,
+a:hover {
+  text-decoration: underline;
+}
+.v-application div.banner-sutta-link a {
+  color: #fff;
+}
+.v-application div.banner-sutta-link a:hover {
+}
+.site-main {
+  display: flex;
+  flex-flow: row nowrap;
+}
+@media(width < 600px) {
+  .site-main {
+    flex-flow: row wrap;
+  }
+}
 </style>
