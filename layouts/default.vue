@@ -1,6 +1,6 @@
 <template>
   <v-app light>
-    <div-main class="site-main">
+    <div class="site-main">
       <div class="banner">
         <div>
           <a href="https://voice.suttacentral.net/"
@@ -16,14 +16,14 @@
         </div>
         <div class="banner-sutta-link">
           <a href="https://dhammaregen.github.io/sutta"
-            aria-label="suttas"
+            aria-label="zu den suttas"
             >Suttas</a>
         </div>
       </div>
-      <v-container>
+      <v-container class="site-content">
         <nuxt />
       </v-container>
-    </div-main>
+    </div>
     <v-footer
       :absolute="!fixed"
       app
@@ -85,14 +85,14 @@ export default {
   background-repeat: no-repeat;
   background-position: right -20px bottom 0px;
   background-size: 100px;
-  width: 350px;
+  width: 320px;
   font-size: 24px;
   font-family: Helvetica, Sans Serif;
   margin-top: 40px;
   line-height: 1em;
   padding: 18px 0px 30px 20px;
 }
-@media(width < 600px) {
+@media(width < 850px) {
   .banner {
     height: 80px;
     width: 100%;
@@ -110,25 +110,25 @@ export default {
   font-style: italic;
   text-decoration: none;
   color: #ce8400;
-  line-height: 1em;
+  line-height: 1.1em;
   margin-top: 0.2em;
 }
 .v-application a.banner-title {
   font-size: 24px;
   font-weight: 400;
-  line-height: 1em;
-  height: 1em;
+  line-height: 1.1em;
+  height: 1.1em;
   color: #FDFDFB;
 }
 .banner-sutta-link {
-  font-size: 13px;
+  font-size: 12.7px;
   font-weight: 400;
-  line-height: 1em;
-  height: 1em;
+  line-height: 1.1em;
+  height: 1.1em;
   margin-top: 0.8em;
   margin-left: 0.1em;
 }
-@media(width < 600px) {
+@media(width < 850px) {
   .banner-sutta-link {
     margin-top: 0.3em;
   }
@@ -149,9 +149,17 @@ a:hover {
   display: flex;
   flex-flow: row nowrap;
 }
-@media(width < 600px) {
+@media(width < 850px) {
   .site-main {
     flex-flow: row wrap;
   }
+}
+.site-content {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+@media(width < 850px) {
+  padding-left: 0rem;
+  padding-right: 0rem;
 }
 </style>
