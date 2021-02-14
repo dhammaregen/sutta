@@ -24,10 +24,7 @@
         <nuxt />
       </v-container>
     </div>
-    <v-footer
-      :absolute="!fixed"
-      app
-    >
+    <v-footer :absolute="!fixed" app >
       <span>&copy; {{ new Date().getFullYear() }} v{{version}}</span>
     </v-footer>
   </v-app>
