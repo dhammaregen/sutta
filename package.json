@@ -1,6 +1,6 @@
 {
-  "name": "sutta",
-  "version": "1.0.17",
+  "name": "@dhammaregen/sutta",
+  "version": "1.1.0",
   "private": true,
   "scripts": {
     "build": "scripts/build",
