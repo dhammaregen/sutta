@@ -1,6 +1,6 @@
 {
   "name": "@dhammaregen/sutta",
-  "version": "1.1.9",
+  "version": "1.1.10",
   "private": true,
   "scripts": {
     "build": "scripts/build",
@@ -18,7 +18,7 @@
     "deploy:branch": "push-dir --dir=dist --branch=gh-pages --cleanup"
   },
   "dependencies": {
-    "@sc-voice/scv-static": "^0.3.34",
+    "@sc-voice/scv-static": "^0.3.35",
     "core-js": "^3.6.5",
     "nuxt": "^2.14.6",
     "vue-cookie": "^1.1.4",
@@ -33,7 +33,7 @@
     "mocha": "^7.1.1",
     "push-dir": "^0.4.1",
     "sass-loader": "^8.0",
-    "scv-bilara": "^1.7.17",
+    "scv-bilara": "^1.7.18",
     "should": "^11.2.0",
     "vue-material-design-icons": "^4.11.0"
   },
