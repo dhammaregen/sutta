@@ -135,10 +135,12 @@ label {
   height: 24px;
   color: var(--scv-color);
   text-decoration-color: var(--scv-color);
+  background-color: blue !important;
 }
 .scv-text-btn .v-btn__content {
   font-size: 0.75rem;
   color: var(--scv-color);
+  text-transform: none;
 }
 .scv-text-btn .v-btn__content:hover,
 .scv-text-btn:focus-within .v-btn__content {
