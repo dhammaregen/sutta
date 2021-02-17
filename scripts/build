@@ -3,6 +3,7 @@ echo -e "BUILD\t: BEGIN `date`"
 DIR=`dirname $0`
 
 npm install --save @sc-voice/scv-static@latest
+npm install --save scv-bilara@latest
 git status | grep 'nothing to commit' > /dev/null; RC=$?
 if [ "$RC" == "0" ]; then
   echo -e "BUILD\t:nothing to commit"
