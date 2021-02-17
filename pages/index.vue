@@ -5,7 +5,7 @@
         <v-icon large>mdi-home</v-icon>
         <home-icon class="scv-settings-icon"/>
       </v-btn>
-      <scv-settings dark :js="js"/>
+      <scv-settings monolingual="de" :version="version" dark :js="js"/>
     </div>
     <div class="content-search">
       <scv-search-field :lang="lang" :js="js"
@@ -57,6 +57,9 @@ export default {
     },
   },
   computed: {
+    version() {
+      return require('../package.json').version;
+    },
     js() { 
       return ScvSrc;
     },
