@@ -1,8 +1,8 @@
 <template>
   <v-sheet light class="content" >
     <div class="content-nav">
-      <v-btn icon class="scv-icon-btn">
-        <v-icon large>mdi-home</v-icon>
+      <v-btn icon class="scv-icon-btn"
+        @click="clickHome()">
         <home-icon class="scv-settings-icon"/>
       </v-btn>
       <scv-settings monolingual="de" :version="version" dark :js="js"/>
@@ -49,6 +49,10 @@ export default {
   mounted() {
   },
   methods:{
+    clickHome() {
+      console.log('clickHome');
+      window.location.reload();
+    },
     search(value) {
       console.log(`search:`, value);
     },
