@@ -50,8 +50,11 @@ export default {
   },
   methods:{
     clickHome() {
-      console.log('clickHome');
-      window.location.reload();
+      console.log('clickHome', window.location);
+      let { search } = this.$route.query;
+      if (search) {
+        window.location.href = window.location.href.replace(/\?.*/,'');
+      }
     },
     search(value) {
       console.log(`search:`, value);
