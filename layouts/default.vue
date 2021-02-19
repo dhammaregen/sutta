@@ -21,10 +21,6 @@
               >Suttas</a>
           </div>
         </div><!-- banner -->
-        <div class="banner-content">
-          <scv-search-field :lang="lang" :js="js" />
-          <scv-results :lang="lang" :js="js"/>
-        </div>
       </div><!-- site-banner -->
       <v-container class="site-content">
         <nuxt />
@@ -172,14 +168,6 @@ a:hover {
 @media(width < 850px) {
   .site-main {
     flex-flow: row wrap;
-  }
-}
-.banner-content {
-  padding-left: 1em;
-}
-@media(width < 1200px) {
-  .banner-content {
-    display: none;
   }
 }
 .site-content {

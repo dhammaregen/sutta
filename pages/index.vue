@@ -75,11 +75,6 @@ export default {
 
 .content-search {
 }
-@media(width > 1200px) {
-  .content-search {
-    display: none;
-  }
-}
 
 .content-nav {
   width: 100%;
