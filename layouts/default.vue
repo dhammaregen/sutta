@@ -174,6 +174,9 @@ a:hover {
     flex-flow: row wrap;
   }
 }
+.banner-content {
+  padding-left: 1em;
+}
 @media(width < 1200px) {
   .banner-content {
     display: none;
