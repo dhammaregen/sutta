@@ -8,9 +8,7 @@
       <scv-settings monolingual="de" :version="version" dark :js="js"/>
     </div>
     <div class="content-search">
-      <scv-search-field :lang="lang" :js="js"
-        v-on:search-text="search"
-      />
+      <scv-search-field :lang="lang" :js="js" />
       <scv-results :lang="lang" :js="js"/>
     </div>
     <scv-sutta :js="js" />
@@ -56,9 +54,6 @@ export default {
         window.location.href = window.location.href.replace(/\?.*/,'');
       }
     },
-    search(value) {
-      console.log(`search:`, value);
-    },
     githubUrl(path) {
       return `https://github.com/sc-voice/scv-static/blob/main/${path}`;
     },
@@ -70,12 +65,6 @@ export default {
     js() { 
       return ScvSrc;
     },
-    langItems() {
-      return [
-        { text: 'English', value: 'en', },
-        { text: 'Deutsch', value: 'de', },
-      ];
-    },
   },
 }
 </script>
@@ -85,7 +74,11 @@ export default {
 }
 
 .content-search {
-  xmax-width: 28rem;
+}
+@media(width > 1200px) {
+  .content-search {
+    display: none;
+  }
 }
 
 .content-nav {
@@ -102,7 +95,7 @@ export default {
 
 .content {
   display: flex;
-  flex-flow: column;
+  flex-flow: column wrap;
   align-items: center;
   padding-left: 0;
   padding-right: 0;

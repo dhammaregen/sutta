@@ -1,29 +1,35 @@
 <template>
   <v-app light>
     <div class="site-main">
-      <div class="banner">
-        <div>
-          <a href="https://voice.suttacentral.net/"
-            aria-label="zur voice-webseite"
-            target="_blank"
-            class='banner-sc-link'>SuttaCentral Voice</a>
+      <div class="site-banner">
+        <div class="banner">
+          <div>
+            <a href="https://voice.suttacentral.net/"
+              aria-label="zur voice-webseite"
+              target="_blank"
+              class='banner-sc-link'>SuttaCentral Voice</a>
+          </div>
+          <div>
+            <a href="https://dhammaregen.github.io/dhammaregen"
+              class='banner-title'
+              aria-label="dhammaregen-homepage"
+              >Dhammaregen</a>
+          </div>
+          <div class="banner-sutta-link">
+            <a href="https://dhammaregen.github.io/sutta"
+              aria-label="zu den suttas"
+              >Suttas</a>
+          </div>
+        </div><!-- banner -->
+        <div class="banner-content">
+          <scv-search-field :lang="lang" :js="js" />
+          <scv-results :lang="lang" :js="js"/>
         </div>
-        <div>
-          <a href="https://dhammaregen.github.io/dhammaregen"
-            class='banner-title'
-            aria-label="dhammaregen-homepage"
-            >Dhammaregen</a>
-        </div>
-        <div class="banner-sutta-link">
-          <a href="https://dhammaregen.github.io/sutta"
-            aria-label="zu den suttas"
-            >Suttas</a>
-        </div>
-      </div>
+      </div><!-- site-banner -->
       <v-container class="site-content">
         <nuxt />
       </v-container>
-    </div>
+    </div><!-- site-main -->
     <v-footer :absolute="!fixed" app >
       <span>&copy; {{ new Date().getFullYear() }} v{{version}}</span>
     </v-footer>
@@ -37,6 +43,16 @@ const { version } = require('~/package.json');
 import HomeIcon from 'vue-material-design-icons/Home.vue';
 import MenuIcon from 'vue-material-design-icons/Menu.vue';
 import MonitorIcon from 'vue-material-design-icons/Monitor.vue';
+import { 
+  ScvVue,
+  ScvSrc,
+} from "@sc-voice/scv-static";
+const {
+  ScvSearchField,
+  ScvResults,
+  ScvSettings,
+} = ScvVue;
+
 
 export default {
   components: {
@@ -44,10 +60,14 @@ export default {
     HomeIcon,
     MenuIcon,
     MonitorIcon,
+    ScvSearchField,
+    ScvResults,
+    ScvSettings,
   },
   data () {
     return {
       clipped: false,
+      lang: 'de',
       drawer: false,
       fixed: false,
       items: [
@@ -68,6 +88,9 @@ export default {
   computed: {
     version() {
       return version;
+    },
+    js() { 
+      return ScvSrc;
     },
   },
 }
@@ -151,6 +174,11 @@ a:hover {
     flex-flow: row wrap;
   }
 }
+@media(width < 1200px) {
+  .banner-content {
+    display: none;
+  }
+}
 .site-content {
   padding-left: 1rem;
   padding-right: 1rem;
@@ -158,5 +186,9 @@ a:hover {
 @media(width < 850px) {
   padding-left: 0rem;
   padding-right: 0rem;
+}
+.site-banner {
+  display: flex;
+  flex-flow: column nowrap;
 }
 </style>
