@@ -1,6 +1,6 @@
 {
   "name": "@dhammaregen/sutta",
-  "version": "1.1.36",
+  "version": "1.1.37",
   "private": true,
   "scripts": {
     "build": "scripts/build",
@@ -18,7 +18,7 @@
     "deploy:branch": "push-dir --dir=dist --branch=gh-pages --cleanup"
   },
   "dependencies": {
-    "@sc-voice/scv-static": "^0.3.64",
+    "@sc-voice/scv-static": "^0.3.66",
     "core-js": "^3.6.5",
     "nuxt": "^2.14.6",
     "vue-cookie": "^1.1.4",
