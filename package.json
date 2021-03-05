@@ -1,6 +1,6 @@
 {
   "name": "@dhammaregen/sutta",
-  "version": "1.1.82",
+  "version": "1.1.83",
   "private": true,
   "scripts": {
     "build": "scripts/build",
@@ -33,7 +33,7 @@
     "mocha": "^7.1.1",
     "push-dir": "^0.4.1",
     "sass-loader": "^8.0",
-    "scv-bilara": "^1.7.29",
+    "scv-bilara": "^1.7.30",
     "should": "^11.2.0",
     "vue-material-design-icons": "^4.11.0"
   },
